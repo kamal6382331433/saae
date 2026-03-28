@@ -1,0 +1,6 @@
+@echo off
+echo Downloading Maven...
+curl.exe -L "https://archive.apache.org/dist/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.zip" -o "maven.zip"
+echo Extracting Maven...
+powershell -Command "Expand-Archive -Force -Path 'maven.zip' -DestinationPath '.'"
+echo Done.

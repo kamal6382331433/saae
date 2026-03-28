@@ -1,0 +1,28 @@
+# === Build Output ===
+target/
+*.class
+*.jar
+*.war
+
+# === Maven ===
+apache-maven-3.9.6/
+maven.zip
+.mvn/
+
+# === IDE ===
+.settings/
+.classpath
+.project
+.apt_generated/
+.apt_generated_tests/
+.vscode/
+*.iml
+.idea/
+
+# === OS ===
+Thumbs.db
+.DS_Store
+
+# === Misc ===
+*.log
+package-lock.json

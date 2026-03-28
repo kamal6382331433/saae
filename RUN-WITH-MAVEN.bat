@@ -20,7 +20,12 @@ echo Starting application with Maven...
 echo.
 
 REM Using Maven directly to compile and run
-call mvn clean spring-boot:run -DskipTests
+if exist "%~dp0apache-maven-3.9.6\bin\mvn.cmd" (
+    echo Using local Maven...
+    call "%~dp0apache-maven-3.9.6\bin\mvn.cmd" clean spring-boot:run -DskipTests
+) else (
+    call mvn clean spring-boot:run -DskipTests
+)
 
 if %errorlevel% neq 0 (
     echo.

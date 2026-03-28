@@ -23,8 +23,11 @@ echo.
 
 cd /d "%~dp0"
 
-REM Check if Maven wrapper exists, otherwise use mvn
-if exist mvnw.cmd (
+REM Check if local Maven exists, otherwise check wrapper, otherwise use system Maven
+if exist "%~dp0apache-maven-3.9.6\bin\mvn.cmd" (
+    echo Using local Maven...
+    call "%~dp0apache-maven-3.9.6\bin\mvn.cmd" spring-boot:run
+) else if exist mvnw.cmd (
     echo Using Maven Wrapper...
     call mvnw.cmd spring-boot:run
 ) else (
